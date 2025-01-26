@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffccf9, #ffffff);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+html {
+  height: auto;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background-color: rgba(227, 95, 170, 0.2);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.particle.large {
+  width: 50px;
+  height: 50px;
+}
+
+.particle.medium {
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-100px) translateX(50px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  background-color: rgba(207, 106, 134, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #e0e0e0;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 15px 20px;
+  background-color: #5a3c85;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    flex-grow 0.3s ease, box-shadow 0.3s ease;
+  flex-grow: 1;
+  min-width: 100px;
+  max-width: 200px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #764fbf;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#result {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f4f4f4;
+  margin-top: 20px;
+  min-height: 40px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px 18px;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    width: 90%;
+    max-width: 250px;
+  }
+}
